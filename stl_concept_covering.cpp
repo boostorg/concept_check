@@ -591,7 +591,7 @@ main()
     std::nth_element(ri, ri, ri, comp);
   }
   {
-#if defined(__GNUC__)
+#if defined(__GNUC__) || defined(__IBMCPP__)
     typedef less_than_op_first_archetype<> FT;
     typedef less_than_op_second_archetype<> T;
 #elif defined(__KCC)
@@ -615,7 +615,7 @@ main()
     fi = std::lower_bound(fi, fi, value, comp);
   }
   {
-#if defined(__GNUC__)
+#if defined(__GNUC__)  || defined(__IBMCPP__)
     // Note, order of T,FT is flipped from lower_bound
     typedef less_than_op_second_archetype<> FT;
     typedef less_than_op_first_archetype<> T;
@@ -639,7 +639,7 @@ main()
     fi = std::upper_bound(fi, fi, value, comp);
   }
   {
-#if defined(__GNUC__)
+#if defined(__GNUC__) || defined(__IBMCPP__)
     typedef less_than_op_first_archetype<
       less_than_op_second_archetype< null_archetype<>, optag2>, optag1> FT;
     typedef less_than_op_second_archetype<
@@ -669,7 +669,7 @@ main()
     ignore_unused_variable_warning(p);
   }
   {
-#if defined(__GNUC__)
+#if defined(__GNUC__)  || defined(__IBMCPP__)
     typedef less_than_op_first_archetype<
       less_than_op_second_archetype<null_archetype<>, optag2>, optag1> FT;
     typedef less_than_op_second_archetype<
@@ -686,7 +686,7 @@ main()
   {
     typedef null_archetype<int> Arg1;
     typedef null_archetype<char> Arg2;
-#if defined(__GNUC__) || defined(__KCC)
+#if defined(__GNUC__) || defined(__KCC) || defined(__IBMCPP__)
     typedef convertible_to_archetype<Arg1,
       convertible_to_archetype<Arg2> > FT;
     typedef convertible_to_archetype<Arg2,
@@ -701,7 +701,7 @@ main()
   }
   {
     typedef null_archetype<> Tout;
-#if defined(__GNUC__) || defined(__KCC)
+#if defined(__GNUC__) || defined(__KCC) || defined(__IBMCPP__)
     typedef less_than_op_first_archetype<
       less_than_op_second_archetype<
       convertible_to_archetype<Tout>, optag2>, optag1 > Tin1;
