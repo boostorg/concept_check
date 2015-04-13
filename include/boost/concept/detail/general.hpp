@@ -67,7 +67,8 @@ struct requirement_<void(*)(Model)>
 
 // Version check from https://svn.boost.org/trac/boost/changeset/82886
 // (boost/static_assert.hpp)
-#if defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7))) 
+#if (defined(__has_attribute) && __has_attribute(unused)) \
+    || (defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 7)))) 
 #define BOOST_CONCEPT_UNUSED_TYPEDEF __attribute__((unused))
 #else
 #define BOOST_CONCEPT_UNUSED_TYPEDEF /**/
