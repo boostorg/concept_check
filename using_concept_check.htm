@@ -114,7 +114,7 @@ int main() {
   also be parenthesized. For example, the standard <code>stable_sort</code>
   algorithm might be declared as follows: </p>
   <pre>
-class template&lt;typename RanIter&gt;
+template &lt;class RanIter&gt;
 BOOST_CONCEPT_REQUIRES(
     ((Mutable_RandomAccessIterator&lt;RanIter&gt;))
     ((LessThanComparable&lt;typename Mutable_RandomAccessIterator&lt;RanIter&gt;::value_type&gt;)),
