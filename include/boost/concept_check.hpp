@@ -734,8 +734,8 @@ namespace boost
    private:
       void const_constraints(const C& cc)
       {
-          const_reverse_iterator i = cc.rbegin();
-          i = cc.rend();
+          const_reverse_iterator _i = cc.rbegin();
+          _i = cc.rend();
       }
       C c;
   };

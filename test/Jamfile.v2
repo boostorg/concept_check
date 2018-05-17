@@ -5,7 +5,7 @@
 import testing ;
 
 test-suite concept_check
-  : [ run stl_concept_covering.cpp ]
+  : [ link stl_concept_covering.cpp ]
     [ run stl_concept_check.cpp ]
     [ run concept_check_test.cpp  ]
     [ run class_concept_check_test.cpp ]
