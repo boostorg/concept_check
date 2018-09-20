@@ -26,7 +26,7 @@
 
   <p>As an example of how to create a concept checking class template, we
   look at how to create the corresponding checks for the <a href=
-  "http://www.sgi.com/tech/stl/InputIterator.html">InputIterator</a> concept.
+  "http://www.boost.org/sgi/stl/InputIterator.html">InputIterator</a> concept.
   The complete definition is here:</p>
   <pre>
 template &lt;class X&gt;
@@ -125,12 +125,12 @@ BOOST_CONCEPT_USAGE(InputIterator)
   of <a href="concept_covering.htm">Concept Archetypes</a>, but it's always
   better to avoid them pre-emptively.</p>
 
-  <h3>Similarity to Proposed C++0x Language Support for Concepts</h3>
+  <h3>Similarity to C++20 Language Support for Concepts</h3>
 
   <p>This library's syntaxes for concept refinement and for access of
   associated types mirrors the corresponding <a href=
-  "http://www.generic-programming.org/languages/conceptcpp/">proposed</a>
-  syntaxes in C++0x. However, C++0x will use
+  "http://en.cppreference.com/w/cpp/language/constraints">C++20 constraint
+  syntaxes</a>. However, C++20 will use
   “signatures” rather than usage patterns to
   describe the valid operations on types participating in a concept, so when
   converting your concept checking classes into language-supported concepts,
