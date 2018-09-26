@@ -335,8 +335,8 @@ namespace boost
 
 #if (BOOST_WORKAROUND(__GNUC__, BOOST_TESTED_AT(4) \
                       && BOOST_WORKAROUND(__GNUC__, > 3)))
-      // Declare a dummy construktor to make gcc happy.
-      // It seems the compiler can not generate a sensible constructor when this is instantiated with a refence type.
+      // Declare a dummy constructor to make gcc happy.
+      // It seems the compiler can not generate a sensible constructor when this is instantiated with a reference type.
       // (warning: non-static reference "const double& boost::UnaryFunction<YourClassHere>::arg"
       // in class without a constructor [-Wuninitialized])
       UnaryFunction();
@@ -365,7 +365,7 @@ namespace boost
 #if (BOOST_WORKAROUND(__GNUC__, BOOST_TESTED_AT(4) \
                       && BOOST_WORKAROUND(__GNUC__, > 3)))
       // Declare a dummy constructor to make gcc happy.
-      // It seems the compiler can not generate a sensible constructor when this is instantiated with a refence type.
+      // It seems the compiler can not generate a sensible constructor when this is instantiated with a reference type.
       // (warning: non-static reference "const double& boost::BinaryFunction<YourClassHere>::arg"
       // in class without a constructor [-Wuninitialized])
       BinaryFunction();
@@ -385,7 +385,7 @@ namespace boost
 #if (BOOST_WORKAROUND(__GNUC__, BOOST_TESTED_AT(4) \
                       && BOOST_WORKAROUND(__GNUC__, > 3)))
       // Declare a dummy constructor to make gcc happy.
-      // It seems the compiler can not generate a sensible constructor when this is instantiated with a refence type.
+      // It seems the compiler can not generate a sensible constructor when this is instantiated with a reference type.
       // (warning: non-static reference "const double& boost::UnaryPredicate<YourClassHere>::arg"
       // in class without a constructor [-Wuninitialized])
       UnaryPredicate();
@@ -404,7 +404,7 @@ namespace boost
 #if (BOOST_WORKAROUND(__GNUC__, BOOST_TESTED_AT(4) \
                       && BOOST_WORKAROUND(__GNUC__, > 3)))
       // Declare a dummy constructor to make gcc happy.
-      // It seems the compiler can not generate a sensible constructor when this is instantiated with a refence type.
+      // It seems the compiler can not generate a sensible constructor when this is instantiated with a reference type.
       // (warning: non-static reference "const double& boost::BinaryPredicate<YourClassHere>::arg"
       // in class without a constructor [-Wuninitialized])
       BinaryPredicate();
@@ -429,7 +429,7 @@ namespace boost
 #if (BOOST_WORKAROUND(__GNUC__, BOOST_TESTED_AT(4) \
                       && BOOST_WORKAROUND(__GNUC__, > 3)))
       // Declare a dummy constructor to make gcc happy.
-      // It seems the compiler can not generate a sensible constructor when this is instantiated with a refence type.
+      // It seems the compiler can not generate a sensible constructor when this is instantiated with a reference type.
       // (warning: non-static reference "const double& boost::Const_BinaryPredicate<YourClassHere>::arg"
       // in class without a constructor [-Wuninitialized])
       Const_BinaryPredicate();
