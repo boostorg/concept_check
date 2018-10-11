@@ -104,7 +104,7 @@
   checks, we wrap the member function pointer mechanism in a function named
   <tt>function_requires()</tt>. The following code snippet shows how to use
   <tt>function_requires()</tt> to make sure that the iterator is a <a href=
-  "http://www.sgi.com/tech/stl/RandomAccessIterator.html">RandomAccessIterator</a>.</p>
+  "http://www.boost.org/sgi/stl/RandomAccessIterator.html">RandomAccessIterator</a>.</p>
   <pre>
   template &lt;class Iter&gt;
   void stable_sort(Iter first, Iter last)
@@ -156,7 +156,6 @@
   implementation of the BCCL concept checks because some compilers do not
   implement template parameters of function pointer type. 
   <!-- We decided not to go with this version since it is easier to misuse
-
 To check the type parameters of class templates, we provide the
 <tt>class_requires</tt> class which can be used inside the body of a
 class definition (whereas <tt>function_requires()</tt> can only be
@@ -165,25 +164,21 @@ nested class template, where the template parameter is a function
 pointer. We then use the nested class type in a typedef with the
 function pointer type of the constraint function as the template
 argument.
-
 <pre>
   template &lt;class Concept&gt;
   class class_requires
   {
     typedef void (Concept::* function_pointer)();
-
     template &lt;function_pointer Fptr&gt;
     struct dummy_struct { };
   public:
     typedef dummy_struct&lt; BOOST_FPTR Concept::constraints &gt; check;
   };
 </pre>
-
 <tt>class_requires</tt> was not used in the implementation of the
 Boost Concept Checking Library concept checks because several
 compilers do not implement template parameters of function pointer
 type.
-
 --></p>
 
   <p><a href="./reference.htm">Next: Reference</a><br />
