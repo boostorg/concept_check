@@ -78,6 +78,17 @@ namespace accum
   }
 }
 
+// for std::shuffle
+namespace shuffle
+{
+  struct URBG {
+    typedef unsigned int result_type;
+    result_type BOOST_CONSTEXPR static min() { return 0; }
+    result_type BOOST_CONSTEXPR static max() { return 1; }
+    result_type operator()() { return 1; }
+  };
+}
+
 // for std::inner_product
 namespace inner_prod
 {
@@ -510,6 +521,7 @@ main()
     output_iterator_archetype<Tout> out(dummy_cons);
     out = std::rotate_copy(fi, fi, fi, out);
   }
+#ifndef BOOST_NO_CXX98_RANDOM_SHUFFLE
   {
     typedef sgi_assignable_archetype<> T;
     mutable_random_access_iterator_archetype<T> ri;
@@ -521,6 +533,14 @@ main()
     unary_function_archetype<std::ptrdiff_t, std::ptrdiff_t> ran(dummy_cons);
     std::random_shuffle(ri, ri, ran);
   }
+#else
+  {
+    typedef sgi_assignable_archetype<> T;
+    mutable_random_access_iterator_archetype<T> ri;
+    shuffle::URBG urbg;
+    std::shuffle(ri, ri, urbg);
+  }
+#endif
   {
     typedef null_archetype<> PredArg;
     typedef sgi_assignable_archetype<convertible_to_archetype<PredArg> > FT;
