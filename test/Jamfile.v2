@@ -4,6 +4,10 @@
 # http://www.boost.org/LICENSE_1_0.txt)
 import testing ;
 
+project : requirements
+    <source>/boost/core//boost_core
+    ;
+
 test-suite concept_check
   : [ link stl_concept_covering.cpp ]
     [ run stl_concept_check.cpp ]
