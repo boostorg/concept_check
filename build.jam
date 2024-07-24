@@ -5,19 +5,22 @@
 
 require-b2 5.2 ;
 
+constant boost_dependencies :
+    /boost/config//boost_config
+    /boost/preprocessor//boost_preprocessor
+    /boost/static_assert//boost_static_assert
+    /boost/type_traits//boost_type_traits ;
+
 project /boost/concept_check
     : common-requirements
-        <library>/boost/config//boost_config
-        <library>/boost/preprocessor//boost_preprocessor
-        <library>/boost/static_assert//boost_static_assert
-        <library>/boost/type_traits//boost_type_traits
         <include>include
     ;
 
 explicit
-    [ alias boost_concept_check ]
+    [ alias boost_concept_check : : : : <library>$(boost_dependencies) ]
     [ alias all : boost_concept_check test ]
     ;
 
 call-if : boost-library concept_check
     ;
+
