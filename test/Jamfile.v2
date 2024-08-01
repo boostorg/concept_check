@@ -6,6 +6,7 @@ import testing ;
 
 project : requirements
     <library>/boost/core//boost_core
+    <library>/boost/concept_check//boost_concept_check
     ;
 
 test-suite concept_check
